@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnHub - Learning Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="logo">
+            <span>🎓</span> LearnHub
+        </div>
+
+        <nav>
+            <a href="#" class="active">🏠 Dashboard</a>
+            <a href="#courses">📚 My Courses</a>
+            <a href="#progress">📊 Progress</a>
+            <a href="#instructors">👨‍🏫 Instructors</a>
+            <a href="#certificates">🏆 Certificates</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="#">⚙️ Settings</a>
+            <a href="#">🚪 Logout</a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Header -->
+        <header class="topbar">
+            <div>
+                <h1>Learning Dashboard</h1>
+                <p>Welcome back! Continue your learning journey.</p>
+            </div>
+
+            <div class="profile">
+                <div class="profile-icon">S</div>
+                <div>
+                    <strong>Sireesha</strong>
+                    <small>Student</small>
+                </div>
+            </div>
+        </header>
+
+        <!-- Welcome Banner -->
+        <section class="welcome">
+            <div>
+                <span class="tag">ONLINE LEARNING</span>
+                <h2>Learn today, lead tomorrow 🚀</h2>
+                <p>
+                    Improve your skills with expert-led courses,
+                    practical lessons and interactive learning.
+                </p>
+                <button onclick="scrollToCourses()">Explore Courses</button>
+            </div>
+
+            <div class="welcome-icon">
+                🎓
+            </div>
+        </section>
+
+        <!-- Statistics -->
+        <section class="stats">
+
+            <div class="stat-card">
+                <div class="stat-icon">📚</div>
+                <div>
+                    <h3 id="courseCount">4</h3>
+                    <p>Enrolled Courses</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">📈</div>
+                <div>
+                    <h3>68%</h3>
+                    <p>Average Progress</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">🏆</div>
+                <div>
+                    <h3>3</h3>
+                    <p>Certificates</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">⏱️</div>
+                <div>
+                    <h3>42h</h3>
+                    <p>Learning Hours</p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Courses -->
+        <section class="courses-section" id="courses">
+
+            <div class="section-header">
+                <div>
+                    <h2>Popular Courses</h2>
+                    <p>Choose a course and start learning.</p>
+                </div>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="🔍 Search courses..."
+                    onkeyup="searchCourses()"
+                >
+            </div>
+
+            <div class="course-grid" id="courseGrid">
+
+                <!-- Course 1 -->
+                <div class="course-card">
+                    <div class="course-image web">
+                        <span>HTML</span>
+                    </div>
+
+                    <div class="course-content">
+                        <span class="category">Web Development</span>
+                        <h3>Complete HTML & CSS</h3>
+
+                        <p>
+                            Learn how to create modern and responsive websites.
+                        </p>
+
+                        <div class="course-info">
+                            <span>📖 24 Lessons</span>
+                            <span>⏱ 8 Hours</span>
+                        </div>
+
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 75%;"></div>
+                        </div>
+
+                        <div class="course-footer">
+                            <span>75% Complete</span>
+                            <button onclick="continueCourse('HTML & CSS')">
+                                Continue
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 2 -->
+                <div class="course-card">
+                    <div class="course-image javascript">
+                        <span>JS</span>
+                    </div>
+
+                    <div class="course-content">
+                        <span class="category">Programming</span>
+                        <h3>JavaScript Fundamentals</h3>
+
+                        <p>
+                            Understand JavaScript programming from basics to advanced concepts.
+                        </p>
+
+                        <div class="course-info">
+                            <span>📖 30 Lessons</span>
+                            <span>⏱ 12 Hours</span>
+                        </div>
+
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 60%;"></div>
+                        </div>
+
+                        <div class="course-footer">
+                            <span>60% Complete</span>
+                            <button onclick="continueCourse('JavaScript Fundamentals')">
+                                Continue
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 3 -->
+                <div class="course-card">
+                    <div class="course-image python">
+                        <span>PY</span>
+                    </div>
+
+                    <div class="course-content">
+                        <span class="category">Programming</span>
+                        <h3>Python Programming</h3>
+
+                        <p>
+                            Learn Python programming with practical examples and projects.
+                        </p>
+
+                        <div class="course-info">
+                            <span>📖 35 Lessons</span>
+                            <span>⏱ 15 Hours</span>
+                        </div>
+
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 45%;"></div>
+                        </div>
+
+                        <div class="course-footer">
+                            <span>45% Complete</span>
+                            <button onclick="continueCourse('Python Programming')">
+                                Continue
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 4 -->
+                <div class="course-card">
+                    <div class="course-image database">
+                        <span>DB</span>
+                    </div>
+
+                    <div class="course-content">
+                        <span class="category">Database</span>
+                        <h3>Database Management</h3>
+
+                        <p>
+                            Learn SQL, database design and database management concepts.
+                        </p>
+
+                        <div class="course-info">
+                            <span>📖 28 Lessons</span>
+                            <span>⏱ 10 Hours</span>
+                        </div>
+
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 30%;"></div>
+                        </div>
+
+                        <div class="course-footer">
+                            <span>30% Complete</span>
+                            <button onclick="continueCourse('Database Management')">
+                                Continue
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Learning Progress -->
+        <section class="progress-section" id="progress">
+
+            <div class="section-title">
+                <h2>My Learning Progress</h2>
+                <p>Track your learning performance.</p>
+            </div>
+
+            <div class="progress-container">
+
+                <div class="progress-item">
+                    <div>
+                        <strong>HTML & CSS</strong>
+                        <span>75%</span>
+                    </div>
+                    <div class="large-progress">
+                        <div style="width:75%"></div>
+                    </div>
+                </div>
+
+                <div class="progress-item">
+                    <div>
+                        <strong>JavaScript</strong>
+                        <span>60%</span>
+                    </div>
+                    <div class="large-progress">
+                        <div style="width:60%"></div>
+                    </div>
+                </div>
+
+                <div class="progress-item">
+                    <div>
+                        <strong>Python</strong>
+                        <span>45%</span>
+                    </div>
+                    <div class="large-progress">
+                        <div style="width:45%"></div>
+                    </div>
+                </div>
+
+                <div class="progress-item">
+                    <div>
+                        <strong>Database Management</strong>
+                        <span>30%</span>
+                    </div>
+                    <div class="large-progress">
+                        <div style="width:30%"></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>© 2026 LearnHub | Online Learning Management System</p>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html> 
